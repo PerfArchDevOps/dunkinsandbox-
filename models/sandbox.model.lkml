@@ -2,9 +2,9 @@ connection: "dbm01p"
 
 include: "/views/*.view.lkml"                # include all views in the views/ folder in this project
 
-
 access_grant: access_grant_rls_dd_operations {
-  user_attribute: rls_dd_operations
+# Equivalent to OBIEE RLS DD Operations application role
+ user_attribute: rls_dd_operations
   allowed_values: [ "yes" ]
 }
 
@@ -12,7 +12,7 @@ access_grant: access_grant_rls_dd_operations {
 explore: shop_d
 
 {
-always_join: [dbi_bi_user_access]
+# always_join: [dbi_bi_user_access]
 
     join: dbi_bi_user_access
     {

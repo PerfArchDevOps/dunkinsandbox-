@@ -8,7 +8,7 @@ view: agg_pos_item
     BAL3.POS_ITEM_BY_DAY_F
   {% elsif agg_pos_item.dwh_shop_rooftp_id._in_query %}
     BAL3.POS_ITEM_BY_DAY_F
-  {% elsif agg_pos_item.DWH_ITEM_SUB_CATGRY_ID._in_query %}
+  {% elsif agg_pos_item.dwh_item_sub_catgry_id._in_query %}
     BAL3.POS_SUBCAT_BY_DAY_DAYPRT_GRP_F
   {% else %}
     BAL3.POS_ITEM_BY_DAY_F
@@ -19,7 +19,7 @@ view: agg_pos_item
   dimension: dwh_item_sub_catgry_id {
     type: number
     hidden: no
-    sql: ${TABLE}.DWH_POS_item_sub_catgry_ID ;;
+    sql: ${TABLE}.DWH_ITEM_SUB_CATGRY_ID ;;
   }
 
   dimension: dwh_pos_menu_item_id {

@@ -18,49 +18,49 @@ view: agg_pos_item
 
   dimension: dwh_item_sub_catgry_id {
     type: number
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.DWH_POS_item_sub_catgry_ID ;;
   }
 
   dimension: dwh_pos_menu_item_id {
     type: number
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.DWH_POS_MENU_ITEM_ID ;;
   }
 
   dimension: dwh_pos_ordr_type_id {
     type: number
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.DWH_POS_ORDR_TYPE_ID ;;
   }
 
   dimension: dwh_shop_brand_id {
     type: number
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.DWH_SHOP_BRAND_ID ;;
   }
 
   dimension: dwh_shop_rooftp_id {
     type: number
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.DWH_SHOP_ROOFTP_ID ;;
   }
 
   dimension: dwh_src_sys_id {
     type: number
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.DWH_SRC_SYS_ID ;;
   }
 
   dimension: net_sales_amt_base {
     type: number
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.NET_SALES_AMT ;;
   }
 
   dimension: net_sales_amt_ly_base {
     type: number
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.NET_SALES_AMT_LY ;;
   }
 
@@ -82,7 +82,7 @@ view: agg_pos_item
 
   dimension: yoy_sales_day_ind {
     type: number
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.YOY_SALES_DAY_IND ;;
   }
 

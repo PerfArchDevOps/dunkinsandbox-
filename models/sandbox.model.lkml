@@ -24,3 +24,8 @@ explore: shop_d
     }
 
 }
+
+
+explore: agg_pos_item {
+
+}

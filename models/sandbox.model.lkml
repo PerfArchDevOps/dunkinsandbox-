@@ -29,3 +29,11 @@ explore: shop_d
 explore: agg_pos_item {
 
 }
+
+explore: dates {
+  join: dbi_bi_user_access {
+    type: cross
+    relationship: many_to_many
+    sql_on: 1=1 ;;
+  }
+}

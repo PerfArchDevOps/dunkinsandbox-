@@ -1079,6 +1079,7 @@ view: shop_d {
 
   dimension: sl_bc_pyrmd_sl_bc_name {
     type: string
+    drill_fields: [drill_sl_bc_pyrmd_sl_bc_name*]
     sql: ${TABLE}.SL_BC_PYRMD_SL_BC_NAME ;;
   }
 
@@ -1139,6 +1140,7 @@ view: shop_d {
 
   dimension: sl_sr_pyrmd_sl_sr_name {
     type: string
+    drill_fields: [drill_sl_sr_pyrmd_sl_sr_name*]
     sql: ${TABLE}.SL_SR_PYRMD_SL_SR_NAME ;;
   }
 
@@ -1380,34 +1382,6 @@ view: shop_d {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-      large_netwrk_name,
-      dd_tv_fmm_pyrmd_tv_fmm_name,
-      dd_tv_pre_pyrmd_tv_pre_name,
-      brand_name,
-      netwrk_name,
-      ownr_name,
-      corp_name,
-      mgr_last_name,
-      mgr_first_name,
-      ta_type_name,
-      wifi_vndr_name,
-      netwrk_ownr_name,
-      sl_sr_name,
-      sl_bc_name,
-      sl_gm_name,
-      sl_sme_name,
-      sl_vp_name,
-      sl_coo_name,
-      tv_fmm_name,
-      tv_fmd_name,
-      tv_dir_name,
-      tv_pre_name,
-      pl_sr_pyrmd_name,
-      pl_bc_pyrmd_name,
-      pl_gm_pyrmd_name,
-      pl_sme_pyrmd_name,
-      pl_vp_pyrmd_name,
-      pl_coo_pyrmd_name,
       sl_bc_pyrmd_sl_bc_name,
       sl_coo_pyrmd_sl_coo_name,
       sl_gm_pyrmd_sl_gm_name,
@@ -1418,24 +1392,18 @@ view: shop_d {
       tv_fmd_pyrmd_tv_fmd_name,
       tv_pre_pyrmd_tv_pre_name,
       tv_fmm_pyrmd_tv_fmm_name,
-      br_sl_bc_pyrmd_sl_bc_name,
-      br_sl_coo_pyrmd_sl_coo_name,
-      br_sl_gm_pyrmd_sl_gm_name,
-      br_sl_sme_pyrmd_sl_sme_name,
-      br_sl_sr_pyrmd_sl_sr_name,
-      br_sl_vp_pyrmd_sl_vp_name,
-      br_tv_dir_pyrmd_tv_dir_name,
-      br_tv_fmd_pyrmd_tv_fmd_name,
-      br_tv_fmm_pyrmd_tv_fmm_name,
-      br_tv_pre_pyrmd_tv_pre_name,
-      dd_sl_bc_pyrmd_sl_bc_name,
-      dd_sl_coo_pyrmd_sl_coo_name,
-      dd_sl_gm_pyrmd_sl_gm_name,
-      dd_sl_sme_pyrmd_sl_sme_name,
-      dd_sl_sr_pyrmd_sl_sr_name,
-      dd_sl_vp_pyrmd_sl_vp_name,
-      dd_tv_dir_pyrmd_tv_dir_name,
-      dd_tv_fmd_pyrmd_tv_fmd_name
     ]
   }
+
+  set: drill_sl_sr_pyrmd_sl_sr_name
+   {fields:   [
+      sl_bc_pyrmd_sl_bc_name
+      ]
+}
+
+  set: drill_sl_bc_pyrmd_sl_bc_name
+  {fields:       [sl_vp_pyrmd_sl_vp_name]
+  }
+
+
 }

@@ -1087,7 +1087,12 @@ view: shop_d {
 
   dimension: sl_coo_name {
     type: string
-    drill_fields: [drill_sl_coo_name*]
+    drill_fields: [drill_sl_coo_name*,
+                    drill_sl_vp_name*,
+                     drill_sl_sme_name*,
+                       drill_sl_gm_name*,
+                        drill_sl_bc_name*,
+                         drill_netwrk_name*]
     sql: ${TABLE}.SL_COO_NAME ;;
   }
 

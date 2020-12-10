@@ -12,7 +12,7 @@ access_grant: access_grant_rls_dd_operations {
 explore: shop_d
 
 {
-#always_join: [dbi_bi_user_access]
+always_join: [dbi_bi_user_access]
 
     join: dbi_bi_user_access
     {

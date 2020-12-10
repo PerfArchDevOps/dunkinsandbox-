@@ -33,7 +33,7 @@ explore: agg_pos_item {
 explore: dates {
   join: init_block_dates {
     type: cross
-    relationship: many_to_many
+    relationship: many_to_one
     sql_on: 1=1 ;;
   }
 }

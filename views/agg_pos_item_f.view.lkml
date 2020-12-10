@@ -9,7 +9,7 @@ view: agg_pos_item
   {% elsif agg_pos_item.dwh_shop_rooftp_id._in_query %}
     BAL3.POS_ITEM_BY_DAY_F
   {% elsif agg_pos_item.DWH_ITEM_SUB_CATGRY_ID._in_query %}
-    BAL3.POS_ITEM_BY_DAY_F
+    BAL3.POS_SUBCAT_BY_DAY_DAYPRT_GRP_F
   {% else %}
     BAL3.POS_ITEM_BY_DAY_F
   {% endif %}

@@ -724,7 +724,8 @@ view: shop_d {
 
   dimension: netwrk_name {
     type: string
-    sql: ${TABLE}.NETWRK_NAME ;;
+    drill_fields: [drill_netwrk_name*]
+        sql: ${TABLE}.NETWRK_NAME ;;
   }
 
   dimension: netwrk_ownr_name {
@@ -1069,7 +1070,8 @@ view: shop_d {
 
   dimension: sl_bc_name {
     type: string
-    sql: ${TABLE}.SL_BC_NAME ;;
+    drill_fields: [drill_sl_bc_name*]
+        sql: ${TABLE}.SL_BC_NAME ;;
   }
 
   dimension: sl_bc_pyrmd {
@@ -1085,6 +1087,7 @@ view: shop_d {
 
   dimension: sl_coo_name {
     type: string
+    drill_fields: [drill_sl_coo_name*]
     sql: ${TABLE}.SL_COO_NAME ;;
   }
 
@@ -1100,7 +1103,8 @@ view: shop_d {
 
   dimension: sl_gm_name {
     type: string
-    sql: ${TABLE}.SL_GM_NAME ;;
+    drill_fields: [drill_sl_gm_name*]
+        sql: ${TABLE}.SL_GM_NAME ;;
   }
 
   dimension: sl_gm_pyrmd {
@@ -1115,6 +1119,8 @@ view: shop_d {
 
   dimension: sl_sme_name {
     type: string
+    drill_fields: [drill_sl_sme_name*]
+
     sql: ${TABLE}.SL_SME_NAME ;;
   }
 
@@ -1146,6 +1152,7 @@ view: shop_d {
 
   dimension: sl_vp_name {
     type: string
+    drill_fields: [drill_sl_vp_name*]
     sql: ${TABLE}.SL_VP_NAME ;;
   }
 
@@ -1396,7 +1403,7 @@ view: shop_d {
   }
 
   set: drill_sl_sr_pyrmd_sl_sr_name
-   {fields:   [
+       {fields:   [
       sl_bc_pyrmd_sl_bc_name
       ]
 }
@@ -1404,6 +1411,14 @@ view: shop_d {
   set: drill_sl_bc_pyrmd_sl_bc_name
   {fields:       [sl_vp_pyrmd_sl_vp_name]
   }
+
+  set: drill_sl_coo_name { fields: [ sl_vp_name ] }
+  set: drill_sl_vp_name  { fields: [ sl_sme_name ]}
+  set: drill_sl_sme_name { fields: [ sl_gm_name ]}
+  set: drill_sl_gm_name  { fields: [ sl_bc_name ]}
+  set: drill_sl_bc_name  { fields: [ netwrk_name ]}
+  set: drill_netwrk_name { fields: [ pfcntr ]}
+
 
 
 }

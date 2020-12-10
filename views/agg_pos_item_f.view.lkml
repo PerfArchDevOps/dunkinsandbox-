@@ -64,6 +64,18 @@ view: agg_pos_item
     sql: ${TABLE}.NET_SALES_AMT_LY ;;
   }
 
+  measure: net_sales_amt {
+    type: sum
+    hidden: no
+    sql: ${TABLE}.NET_SALES_AMT ;;
+  }
+
+  measure: net_sales_amt_ly {
+    type: sum
+    hidden: no
+    sql: ${TABLE}.NET_SALES_AMT_LY ;;
+  }
+
   dimension_group: transctn_bus {
     type: time
     hidden: no

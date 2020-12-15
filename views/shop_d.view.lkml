@@ -1391,6 +1391,18 @@ view: shop_d {
     drill_fields: [detail*]
   }
 
+  measure: count_br {
+    type: count
+    filters: [brand_code: "BR"]
+  }
+
+  measure: count_dd {
+    type: count
+    filters: [brand_code: "DD"]
+  }
+
+
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [

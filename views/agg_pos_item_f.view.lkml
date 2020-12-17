@@ -72,7 +72,7 @@ view: agg_pos_item
 
 
   measure: rank_net_sales_amt {
-    type: sum
+    type: number
     hidden: no
     sql: rank() over (order by ${TABLE}.NET_SALES_AMT) ;;
   }

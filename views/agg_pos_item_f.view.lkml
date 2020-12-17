@@ -70,6 +70,15 @@ view: agg_pos_item
     sql: ${TABLE}.NET_SALES_AMT ;;
   }
 
+
+  measure: rank_net_sales_amt {
+    type: sum
+    hidden: no
+    sql: rank() over (order by ${TABLE}.NET_SALES_AMT) ;;
+  }
+
+
+
   measure: net_sales_amt_ly {
     type: sum
     hidden: no

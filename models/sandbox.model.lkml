@@ -30,7 +30,7 @@ always_join: [dbi_bi_user_access]
 explore: agg_pos_item {
   join: dates { type:inner
     relationship: many_to_one
-    sql_on:  ;;
+    sql_on: ${agg_pos_item.transctn_bus_raw} = ${dates.actual_date_raw} ;;
     }
 
 

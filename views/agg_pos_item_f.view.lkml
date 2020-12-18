@@ -5,16 +5,28 @@ view: agg_pos_item
 
   sql_table_name:
   {% if agg_pos_item.dwh_shop_brand_id._in_query %}
-    BAL3.POS_ITEM_BY_DAY_F
+    BAL3.POS_BRAND_BY_DAY_DAYPRT_GRP_F
   {% elsif agg_pos_item.dwh_shop_rooftp_id._in_query %}
-    BAL3.POS_ITEM_BY_DAY_F
+    BAL3.POS_BRAND_BY_WEEK_DAYPRT_GRP_F
   {% elsif agg_pos_item.dwh_item_sub_catgry_id._in_query %}
+    BAL3.POS_ITEM_BY_DAY_F
+  {% elsif agg_pos_item.dwh_shop_brand_id._in_query %}
+    BAL3.POS_ITEM_BY_DAYPRT_F
+  {% elsif agg_pos_item.dwh_shop_rooftp_id._in_query %}
+    BAL3.POS_ITEM_BY_WEEK_DAYPRT_F
+  {% elsif agg_pos_item.dwh_item_sub_catgry_id._in_query %}
+    BAL3.POS_ITEM_BY_WEEK_F
+  {% elsif agg_pos_item.dwh_shop_rooftp_id._in_query %}
     BAL3.POS_SUBCAT_BY_DAY_DAYPRT_GRP_F
+  {% elsif agg_pos_item.dwh_item_sub_catgry_id._in_query %}
+    BAL3.POS_SUBCAT_BY_WK_DAYPRT_GRP_F
   {% else %}
     BAL3.POS_ITEM_BY_DAY_F
   {% endif %}
   ;;
 
+
+# Foreign key dimensions
 
   dimension: dwh_dayprt_id {
     type: number
@@ -55,6 +67,7 @@ dimension: dwh_item_sub_catgry_id {
     hidden: yes  sql: ${TABLE}.DWH_SHOP_ROOFTP_ID ;;
   }
 
+# Measures
 
   dimension: net_sales_amt_base {
     type: number
@@ -74,15 +87,6 @@ dimension: dwh_item_sub_catgry_id {
     sql: ${TABLE}.NET_SALES_AMT ;;
   }
 
-
-  measure: rank_net_sales_amt {
-    type: number
-    hidden: no
-    sql: rank() over (order by ${TABLE}.NET_SALES_AMT) ;;
-  }
-
-
-
   measure: net_sales_amt_ly {
     type: sum
     hidden: no
@@ -94,11 +98,7 @@ dimension: dwh_item_sub_catgry_id {
     hidden: no
     timeframes: [
       raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
+      date
     ]
     convert_tz: no
     datatype: datetime

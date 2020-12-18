@@ -3,36 +3,36 @@ view: pos_subcat_by_day_dayprt_grp_f {
 
   dimension: dwh_dayprt_grp_id {
     type: number
-    sql: ${TABLE}.DWH_DAYPRT_GRP_ID ;;
+    hidden: yes  sql: ${TABLE}.DWH_DAYPRT_GRP_ID ;;
   }
 
   dimension: dwh_item_sub_catgry_id {
     type: number
-    sql: ${TABLE}.DWH_ITEM_SUB_CATGRY_ID ;;
+    hidden: yes  sql: ${TABLE}.DWH_ITEM_SUB_CATGRY_ID ;;
   }
 
   dimension: dwh_pos_ordr_type_id {
     type: number
-    sql: ${TABLE}.DWH_POS_ORDR_TYPE_ID ;;
+    hidden: yes  sql: ${TABLE}.DWH_POS_ORDR_TYPE_ID ;;
   }
 
   dimension: dwh_shop_brand_id {
     type: number
-    sql: ${TABLE}.DWH_SHOP_BRAND_ID ;;
+    hidden: yes  sql: ${TABLE}.DWH_SHOP_BRAND_ID ;;
   }
 
   dimension: dwh_shop_rooftp_id {
     type: number
-    sql: ${TABLE}.DWH_SHOP_ROOFTP_ID ;;
+    hidden: yes  sql: ${TABLE}.DWH_SHOP_ROOFTP_ID ;;
   }
   dimension: net_sales_amt {
     type: number
-    sql: ${TABLE}.NET_SALES_AMT ;;
+    hidden: yes  sql: ${TABLE}.NET_SALES_AMT ;;
   }
 
   dimension: net_sales_amt_ly {
     type: number
-    sql: ${TABLE}.NET_SALES_AMT_LY ;;
+    hidden: yes  sql: ${TABLE}.NET_SALES_AMT_LY ;;
   }
 
   dimension_group: transctn_bus {
@@ -43,12 +43,12 @@ view: pos_subcat_by_day_dayprt_grp_f {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.TRANSCTN_BUS_DATE ;;
+    hidden: yes  sql: ${TABLE}.TRANSCTN_BUS_DATE ;;
   }
 
   dimension: yoy_sales_day_ind {
     type: string
-    sql: ${TABLE}.YOY_SALES_DAY_IND ;;
+    hidden: yes  sql: ${TABLE}.YOY_SALES_DAY_IND ;;
   }
 
   measure: count {

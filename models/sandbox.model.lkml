@@ -28,11 +28,18 @@ always_join: [dbi_bi_user_access]
 
 
 explore: agg_pos_item {
-  join: dates { type:inner
+
+  join: dates {
+    type:inner
     relationship: many_to_one
     sql_on: ${agg_pos_item.transctn_bus_raw} = ${dates.actual_date_raw} ;;
     }
 
+  join: dates_week {
+    type: inner
+    relationship: many_to_one
+    sql_on: ${agg_pos_item.transctn_bus_week_raw} = ${dates_week.week_ending_raw} ;;
+}
 
 }
 

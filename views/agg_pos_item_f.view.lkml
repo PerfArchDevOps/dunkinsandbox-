@@ -8,7 +8,7 @@ view: agg_pos_item
            and agg_pos_item.transctn_bus_raw._in_query %}
     BAL3.POS_BRAND_BY_DAY_DAYPRT_GRP_F
   {% elsif agg_pos_item.dwh_item_brand_id._in_query and agg_pos_item.dwh_dayprt_grp_id._in_query
-           and  agg_pos_item.transctn_bus_week_raw._in_query %}
+           and  agg_pos_item.week_fiscal_week._in_query %}
     BAL3.POS_BRAND_BY_WEEK_DAYPRT_GRP_F
   {% elsif agg_pos_item.dwh_item_sub_catgry_id._in_query %}
     BAL3.POS_ITEM_BY_DAY_F

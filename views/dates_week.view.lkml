@@ -32,7 +32,7 @@ view: dates_week {
     sql: ${TABLE}.FISCAL_MONTH ;;
   }
 
-  dimension: fiscal_week {
+  dimension: week_fiscal_week {
     type: date
     sql: to_date(${TABLE}.FISCAL_WEEK,'YYYY-MM-DD') ;;
   }
@@ -51,11 +51,7 @@ view: dates_week {
     type: time
     timeframes: [
       raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
+      date
     ]
     convert_tz: no
     datatype: date
@@ -71,11 +67,7 @@ view: dates_week {
     type: time
     timeframes: [
       raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
+      date
     ]
     convert_tz: no
     datatype: date
@@ -121,11 +113,7 @@ view: dates_week {
     type: time
     timeframes: [
       raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
+      date
     ]
     convert_tz: no
     datatype: date

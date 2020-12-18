@@ -1,7 +1,7 @@
 view: agg_pos_item
 
 {
-  label: "Aggregate Aware - Fact - POS Item by Day"
+  label: "Aggregate Aware - Fact - POS Sales"
 
   sql_table_name:
   {% if agg_pos_item.dwh_shop_brand_id._in_query %}
@@ -15,10 +15,25 @@ view: agg_pos_item
   {% endif %}
   ;;
 
+
   dimension: dwh_dayprt_id {
     type: number
     hidden: yes  sql: ${TABLE}.DWH_DAYPRT_ID ;;
   }
+  dimension: dwh_dayprt_grp_id {
+    type: number
+    hidden: yes  sql: ${TABLE}.DWH_DAYPRT_GRP_ID ;;
+  }
+
+  dimension: dwh_item_brand_id {
+    type: number
+    hidden: yes  sql: ${TABLE}.DWH_ITEM_BRAND_ID ;;
+  }
+
+dimension: dwh_item_sub_catgry_id {
+  type: number
+  hidden: yes  sql: ${TABLE}.DWH_ITEM_SUB_CATGRY_ID ;;
+}
 
   dimension: dwh_pos_menu_item_id {
     type: number

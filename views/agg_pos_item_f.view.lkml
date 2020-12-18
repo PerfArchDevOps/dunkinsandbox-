@@ -15,42 +15,31 @@ view: agg_pos_item
   {% endif %}
   ;;
 
-
-  dimension: dwh_item_sub_catgry_id {
+  dimension: dwh_dayprt_id {
     type: number
-    hidden: no
-    sql: ${TABLE}.DWH_ITEM_SUB_CATGRY_ID ;;
+    hidden: yes  sql: ${TABLE}.DWH_DAYPRT_ID ;;
   }
 
   dimension: dwh_pos_menu_item_id {
     type: number
-    hidden: no
-    sql: ${TABLE}.DWH_POS_MENU_ITEM_ID ;;
+    hidden: yes  sql: ${TABLE}.DWH_POS_MENU_ITEM_ID ;;
   }
 
   dimension: dwh_pos_ordr_type_id {
     type: number
-    hidden: no
-    sql: ${TABLE}.DWH_POS_ORDR_TYPE_ID ;;
+    hidden: yes  sql: ${TABLE}.DWH_POS_ORDR_TYPE_ID ;;
   }
 
   dimension: dwh_shop_brand_id {
     type: number
-    hidden: no
-    sql: ${TABLE}.DWH_SHOP_BRAND_ID ;;
+    hidden: yes  sql: ${TABLE}.DWH_SHOP_BRAND_ID ;;
   }
 
   dimension: dwh_shop_rooftp_id {
     type: number
-    hidden: no
-    sql: ${TABLE}.DWH_SHOP_ROOFTP_ID ;;
+    hidden: yes  sql: ${TABLE}.DWH_SHOP_ROOFTP_ID ;;
   }
 
-  dimension: dwh_src_sys_id {
-    type: number
-    hidden: no
-    sql: ${TABLE}.DWH_SRC_SYS_ID ;;
-  }
 
   dimension: net_sales_amt_base {
     type: number

@@ -8,6 +8,29 @@ access_grant: access_grant_rls_dd_operations {
   allowed_values: [ "yes" ]
 }
 
+explore: pos_check_by_week_f {
+  label: "Fact - POS Check by Week"
+  join: dates_week {
+    relationship: many_to_one
+    type: inner
+    sql_on: ${pos_check_by_week_f.transctn_bus_raw}
+      = ${dates_week.week_ending_raw} ;;
+  }
+
+  join: shop_addtnl_attrbts_d {
+    relationship: many_to_one
+    type: inner
+    sql_on: ${pos_check_by_week_f.dwh_shop_brand_id} = ${shop_addtnl_attrbts_d.dwh_shop_brand_id} ;;
+  }
+
+  join: shop_brand_mastr_d{
+    relationship: many_to_one
+    type: inner
+    sql_on: ${pos_check_by_week_f.dwh_shop_brand_id} = ${shop_brand_mastr_d.dwh_shop_brand_id} ;;
+  }
+
+}
+
 
 explore: shop_d
 
